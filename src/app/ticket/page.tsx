@@ -21,14 +21,14 @@ export default function Ticket() {
                   return;
             }
 
-            setIsRequestLoading(true);
-
             if (text == "") {
                   setTextAreaMessage("Bitte fülle dieses Feld aus");
                   return;
             } else {
                   setTextAreaMessage("");
             }
+
+            setIsRequestLoading(true);
 
             const response: any = await fetch("/api/createTicket", {
                   method: "POST",
