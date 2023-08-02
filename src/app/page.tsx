@@ -31,7 +31,10 @@ export default function Home() {
                   headers: {
                         "content-type": "data/json",
                   },
-            }).catch((e) => console.log(e));
+            }).catch((e) => {
+                  alert("There was an error calling the API");
+                  return;
+            });
 
             const jsonResponse = await response.json();
             const message = jsonResponse.message;
@@ -51,7 +54,7 @@ export default function Home() {
 
                   <Image src={headerImage} alt="mc image" className="relative top-[-224px] hidden md:block"></Image>
 
-                  <div className="bg-background_2 w-5/6 px-5 sm:px-12 mb-56 flex flex-col items-center sm:items-start">
+                  <div className="bg-background_2 w-5/6 px-5 sm:px-12 mb-24 md:mb-56 flex flex-col items-center sm:items-start">
                         <h1 className="text-5xl m-6 sm:ml-0 md:text-7xl md:mt-12">Anmeldung</h1>
 
                         <div className="flex flex-col lg:flex-row mb-6 w-full">
@@ -74,12 +77,12 @@ export default function Home() {
                               <div className="gap-10 flex flex-col lg:ml-24">
                                     <div>
                                           <h2 className="text-lg mr-10">Minecraft Name</h2>
-                                          <InputField action={(text: string) => setMinecraftName(text)} placeholder="Username" value="" required={true} errorMessage={mcNameMessage}></InputField>
+                                          <InputField action={(text: string) => setMinecraftName(text)} placeholder="Minecraft Name" value="" required={true} errorMessage={mcNameMessage}></InputField>
                                     </div>
 
                                     <div className="mb-2">
                                           <h2 className="text-lg mr-10">Discord Name</h2>
-                                          <InputField action={(text: string) => setDiscordName(text)} placeholder="Username" value="" required={true} errorMessage=""></InputField>
+                                          <InputField action={(text: string) => setDiscordName(text)} placeholder="Discord Name" value="" required={true} errorMessage=""></InputField>
                                     </div>
 
                                     <Button

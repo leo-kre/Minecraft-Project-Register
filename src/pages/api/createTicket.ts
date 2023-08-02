@@ -4,6 +4,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const reqData = req.body;
       const jsonData: RegisterData = JSON.parse(reqData);
 
+      console.log(jsonData);
+
       const validateMinecraftName = async () => {
             const url = "https://api.mojang.com/users/profiles/minecraft/" + jsonData.minecraftName;
             const apiData: any = await fetch(url);
