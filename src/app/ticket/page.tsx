@@ -17,10 +17,11 @@ export default function Ticket() {
       const [isDataValid, setIsDataValid] = useState(false);
 
       const sendRequest = async () => {
-            setIsRequestLoading(true);
             if (minecraftName == "" || discordName == "") {
                   return;
             }
+
+            setIsRequestLoading(true);
 
             if (text == "") {
                   setTextAreaMessage("Bitte fülle dieses Feld aus");
