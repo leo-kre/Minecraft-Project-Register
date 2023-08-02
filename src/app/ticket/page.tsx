@@ -62,10 +62,10 @@ export default function Ticket() {
                         <h1 className="text-5xl md:text-7xl mb-10">Ticket</h1>
                         <h2 className="text-lg">
                               Hier kannst du ein Ticket erstellen, solltest du noch Fragen haben, welche nicht durch die{" "}
-                              <a href="/" className="text-blue hover:underline">
+                              <a href="/help" className="text-blue hover:underline">
                                     Erklärungsseite
                               </a>{" "}
-                              geklärt werden konnten. In den meisten fällten bekommst du dein Antwort über Discord, nach dem Projektstart kann es aber auch sein, dass du eine Antwort über den Ingame Chat bekommst.
+                              geklärt werden konnten. In den meisten fällten bekommst du deine Antwort über Discord. Nach dem Projektstart kann es aber auch sein, dass du eine Antwort über den Ingame Chat bekommst.
                         </h2>
                         <div className="flex flex-col sm:flex-row gap-10 my-10">
                               <div className="gap-10 flex flex-col">

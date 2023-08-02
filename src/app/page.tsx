@@ -18,10 +18,10 @@ export default function Home() {
       const [isDataValid, setIsDataValid] = useState(false);
 
       const sendRequest = async () => {
-            setIsRequestLoading(true);
             if (minecraftName == "" || discordName == "") {
                   return;
             }
+            setIsRequestLoading(true);
             const response: any = await fetch("/api/registerPlayer", {
                   method: "POST",
                   body: JSON.stringify({
