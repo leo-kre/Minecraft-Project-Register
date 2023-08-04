@@ -3,6 +3,14 @@
 import { useState } from "react";
 import InputField from "./components/InputField";
 
+import titleImage from "../../public/title.png";
+
+/*
+Title generator: https://www.textstudio.com/logo/minecraft-3d-text-41
+Font: Minecraft Tile Cyrillic
+Background: none
+*/
+
 import headerImage from "../../public/background.jpg";
 import Image from "next/image";
 import Header from "./components/Header";
@@ -52,8 +60,12 @@ export default function Home() {
             <main className="min-h-screen bg-background flex flex-col items-center">
                   <Header></Header>
 
-                  <Image src={headerImage} alt="mc image" className="relative top-[-224px] hidden md:block"></Image>
-
+                  <div className="relative top-[-224px] flex flex-col justify-end items-center">
+                        <Image src={headerImage} alt="mc image" className="hidden md:block"></Image>
+                        <div className="font-bold absolute p-2 rounded-t-3xl bg-background">
+                              <Image src={titleImage} alt="title image" className=""></Image>
+                        </div>
+                  </div>
                   <div className="bg-background_2 w-5/6 px-5 sm:px-12 mb-24 md:mb-56 flex flex-col items-center sm:items-start">
                         <h1 className="text-5xl m-6 sm:ml-0 md:text-7xl md:mt-12">Anmeldung</h1>
 
