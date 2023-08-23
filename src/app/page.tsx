@@ -57,7 +57,7 @@ export default function Home() {
       };
 
       return (
-            <main className="min-h-screen bg-background flex flex-col items-center">
+            <main className="min-h-screen bg-background flex flex-col items-center w-screen">
                   <Header></Header>
 
                   <div className="relative top-[-224px] flex flex-col justify-end items-center">
