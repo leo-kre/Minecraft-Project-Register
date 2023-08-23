@@ -1,10 +1,9 @@
+import { loadRegisterList, loadTicketList, registerData, saveRegisterList, saveTicketList, ticketData } from "@/data";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const reqData = req.body;
-      const jsonData: RegisterData = JSON.parse(reqData);
-
-      console.log(jsonData);
+      const jsonData: TicketData = JSON.parse(reqData);
 
       const validateMinecraftName = async () => {
             const url = "https://api.mojang.com/users/profiles/minecraft/" + jsonData.minecraftName;
@@ -15,13 +14,26 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                   res.json({ message: "mc_name_invalid" });
             } else if (apiDataJson.id) {
                   res.json({ message: "success" });
+
+                  loadTicketList();
+
+                  ticketData.push({
+                        discordName: jsonData.discordName,
+                        mcName: jsonData.minecraftName,
+                        message: jsonData.message,
+                  });
+
+                  console.log(ticketData[ticketData.length - 1]);
+
+                  saveTicketList();
             }
       };
 
       validateMinecraftName();
 }
 
-type RegisterData = {
+type TicketData = {
       minecraftName: string;
       discordName: string;
+      message: string;
 };

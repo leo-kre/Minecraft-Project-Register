@@ -1,3 +1,4 @@
+import { loadRegisterList, registerData, saveRegisterList } from "@/data";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -13,6 +14,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                   res.json({ message: "mc_name_invalid" });
             } else if (apiDataJson.id) {
                   res.json({ message: "success" });
+
+                  loadRegisterList();
+
+                  registerData.push({
+                        discordName: jsonData.discordName,
+                        mcName: jsonData.minecraftName,
+                  });
+
+                  saveRegisterList();
             }
       };
 
