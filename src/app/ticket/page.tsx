@@ -36,7 +36,7 @@ export default function Ticket() {
                   body: JSON.stringify({
                         minecraftName: minecraftName,
                         discordName: discordName,
-                        text: text,
+                        message: text,
                   }),
                   headers: {
                         "content-type": "data/json",
