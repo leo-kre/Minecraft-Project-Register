@@ -59,7 +59,7 @@ export default function Ticket() {
       };
 
       return (
-            <main className="w-full ">
+            <main className="w-full">
                   <Header></Header>
                   <div className="flex flex-col justify-center items-center mb-24 sm:mx-24  sm:h-[calc(100vh-6rem)] ">
                         <div className="bg-background_2 px-12 py-6">
